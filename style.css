@@ -1,0 +1,282 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps du document */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Fond légèrement gris clair */
+    color: #333;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Éviter le défilement horizontal */
+}
+
+/* Hero Section */
+.hero-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #006d77, #83c5be); /* Dégradé moderne */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 999; /* Assure que la section Hero est au-dessus des autres éléments */
+    overflow: hidden; /* Évite le défilement */
+}
+
+.hero-content {
+    max-width: 80%; /* Ajuste la largeur de la section Hero */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: slideIn 1s ease-out, colorChange 3s infinite alternate; /* Animation du texte avec changement de couleur */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animation du titre Hero */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ffddc1;
+    }
+    100% {
+        color: #ffd700;
+    }
+}
+
+/* En-tête */
+header {
+    background: linear-gradient(135deg, #006d77, #83c5be); /* Dégradé moderne */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.profile-image {
+    width: 150px; /* Taille de l'image de profil */
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff; /* Bordure épaisse et blanche */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+    border-radius: 10px; /* Coins arrondis */
+    transition: transform 0.5s, box-shadow 0.5s; /* Animation pour la transformation */
+}
+
+.header-text {
+    color: #fff;
+}
+
+.header-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    transform: translateY(10px); /* Effet de décalage */
+    animation: slideIn 1s ease-out, colorChange 3s infinite alternate; /* Animation du texte avec changement de couleur */
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 20px;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s; /* Ajout de la transition pour le clic */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #ffddd2;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Effet de ligne sous le texte */
+}
+
+.nav-link:hover {
+    color: #ffddd2;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1) rotate(-5deg); /* Agrandir légèrement au survol et rotation */
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+    opacity: 0;
+    animation: fadeInSection 1s forwards;
+    background-color: #fff; /* Fond blanc pour les sections */
+    border-radius: 12px; /* Bordures arrondies */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre portée plus marquée */
+    margin-bottom: 20px;
+    transition: transform 0.5s, box-shadow 0.5s; /* Transition pour l'effet de clic */
+}
+
+section:hover {
+    transform: translateY(-15px) scale(1.02); /* Effet de survol pour les sections avec agrandissement */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Ombre portée plus marquée */
+}
+
+/* Projets */
+.project {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.5s, box-shadow 0.5s, background 0.3s; /* Transition améliorée */
+    border-radius: 12px; /* Coins arrondis */
+    background-color: #f9f9f9; /* Fond légèrement gris */
+}
+
+.project:hover {
+    transform: scale(1.07) rotate(2deg); /* Agrandir et rotation légère au survol */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Ombre portée plus marquée */
+    background-color: #ffffff; /* Changement de fond au survol */
+}
+
+.project-link {
+    text-decoration: none;
+    color: #007bff; /* Couleur de lien moderne */
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.project-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+    transform: scale(1.1); /* Agrandir au survol */
+}
+
+/* Images de projet */
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.5s, box-shadow 0.5s; /* Animation pour le survol */
+}
+
+.project-image:hover {
+    transform: scale(1.1) rotate(2deg); /* Agrandir et rotation légère au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre portée plus marquée */
+}
+
+/* Liste des compétences et certifications */
+.skills-list, .certifications-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li, .certifications-list li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s, box-shadow 0.5s; /* Transition améliorée */
+}
+
+.skills-list li:hover, .certifications-list li:hover {
+    transform: translateY(-8px) scale(1.02); /* Effet de levitation au survol avec agrandissement */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation des sections */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modale */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fond plus foncé */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    position:
